@@ -1,0 +1,95 @@
+.attribution { 
+    font-size: 11px; text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+.container{
+    margin: auto;
+    margin-top: 10vw;
+    width: 1440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.box_title{
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 40px;
+    padding: 10px;
+    margin-left: 2%;
+}
+.box_text{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 17px;
+    padding: 5%;
+    padding-right: 20%;
+    padding-top: 0%;
+    line-height: 30px;
+    opacity: 0.75;
+}
+.box_button{
+    display: absolute;
+    bottom: 5%;
+    font-size: 15px;
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: white;
+    padding: 20px;
+    border-radius: 80px;
+    margin: 0 auto;
+    width: 200px;
+    border: none;
+}
+button:hover {
+    transition-duration: 0.25s;
+}
+#box_sedan {
+    background-color: hsl(31, 77%, 52%);
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+}
+#box_sedan > button {
+    color: hsl(31, 77%, 52%);
+    margin-left: 4%;
+    border: 2px solid white;
+}
+#box_sedan > button:hover {
+    background-color: transparent;
+    color: white;
+}
+#box_suv {
+    background-color: hsl(184, 100%, 22%);
+}
+#box_suv > button {
+    color: hsl(184, 100%, 22%);
+    margin-left: 4%;
+    border: 2px solid white;
+}
+#box_suv > button:hover {
+    background-color: transparent;
+    color: white;
+}
+#box_luxury {
+    background-color: hsl(179, 100%, 13%);
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+#box_luxury > button {
+    color: hsl(179, 100%, 13%);
+    margin-left: 4%;
+    border: 2px solid white;
+}
+#box_luxury > button:hover {
+    background-color: transparent;
+    color: white;
+}
+.box_main {
+    height: 60vh;
+    padding: 20px;
+    color: white;
+}
+img {
+    width: 80px;
+    height: 50px;
+    margin-left: 2%;
+    margin-top: 10%
+}

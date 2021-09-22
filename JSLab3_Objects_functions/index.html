@@ -1,0 +1,188 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+  <title>Application of Programing Principles</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+  
+  <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.20.0.css">
+  	
+  <script src="js/qunit-1.21.0.js"></script>
+  <script src="js/labtask.js"></script>
+
+</head>
+
+<body>
+  <div id="main">		
+
+    <header>
+	  
+	  <div id="banner">
+	    <div id="welcome">
+	      <h3>Application of Programing Principles</h3><h3>Functions and Objects</h3>
+	    </div><!--close welcome-->		
+	  </div><!--close banner-->
+    </header>
+    
+	<div id="site_content">		
+	
+	  <div id="strapline">
+	    <div id="welcome_slogan">
+	      <h3>Unit Test Your JavaScript</h3>
+	    </div><!--close welcome_slogan-->
+      </div><!--close strapline-->
+	  
+
+
+	   
+	  <div id="content">
+        <div class="content_item">
+		  
+		  <div class="content_container">
+		  	<div  id="qunit"><p>QUnit will write into this div</p></div>
+		  </div><!--close content_container-->
+  	  
+		</div><!--close content_item-->
+      </div><!--close content-->   
+	</div><!--close site_content-->  	
+
+    <footer>
+    </footer>
+	
+  </div><!--close main-->
+  <script>
+		
+		QUnit.test( "divideNum - divide two numbers", function( assert ) {
+		  	assert.equal(divideNum(4,2), 2, "4 divided by 2 should equal 2." );
+			assert.equal(divideNum(10,20), 0.5, "10 divided by 20 should equal 0.5" );
+		});
+		
+		QUnit.test( "Return an array of three car manufacturers - Vauxhaul,BMW,Volvo", function( assert ) {
+			assert.equal(returnArray('Vauxhaul', 'BMW', 'Volvo').toString(), "Vauxhaul,BMW,Volvo", "Vauxhaul,BMW,Volvo");
+		});
+		
+		QUnit.test( "Return an array of three car manufacturers - Audi,Toyota,Kia", function( assert ) {	
+			assert.equal(returnArray('Audi', 'Toyota', 'Kia').toString(), "Audi,Toyota,Kia", "Audi,Toyota,Kia");
+		 
+		});
+
+		QUnit.test( "Return a student object containing three passed parameters - Burt, Smith, BSmith@smithson.com", function( assert ) {
+			var details = student('Burt', 'Smith', 'BSmith@smithson.com');
+		  	assert.equal( details.firstname, 'Burt' );
+		  	assert.equal( details.lastname, 'Smith' );
+		  	assert.equal( details.email, 'BSmith@smithson.com' );
+		});
+		
+		QUnit.test( "Return a student object containing three passed parameters - Jane, Doe, JDoe@smithson.com", function( assert ) {
+			var details = student('Jane', 'Doe', 'JDoe@smithson.com');
+		  	assert.equal( details.firstname, 'Jane' );
+		  	assert.equal( details.lastname, 'Doe' );
+		  	assert.equal( details.email, 'JDoe@smithson.com' );
+		});
+		
+		
+		QUnit.test( "strungOut using 'What a Wonderful World' and 'Wonderful'", function( assert ) {
+			var details = strungOut('What a Wonderful World', 'Wonderful');
+		  	assert.equal( details.original, 'What a Wonderful World' );
+		  	assert.equal( details.caps, 'WHAT A WONDERFUL WORLD' );
+		  	assert.equal( details.subIndex,  7);
+		});
+		
+		QUnit.test( "strungOut2 using 'What a Wonderful World' and 'Wonderful'", function( assert ) {
+			var details = strungOut2('What a Wonderful World', 'Wonderful');
+		  	assert.equal( details.original, 'What a Wonderful World' );
+		  	assert.equal( details.getUpper(), 'WHAT A WONDERFUL WORLD' );
+		  	assert.equal( details.getIndex(),  7);
+		});
+
+		QUnit.test( "Create a chain of three hotels", function( assert ) {
+			var chain = createHotels();
+			var countHotels = chain.length;
+            assert.equal( countHotels, 3, "Number of hotels should be 3." );
+         });
+		 QUnit.test( "Check hotel names", function( assert ) {
+			var chain = createHotels();
+			var names = (chain[0].name + chain[1].name + chain[2].name).toLowerCase();
+            assert.equal( names.includes("grand"), true, "The string 'grand' should be included in name. (case insensitive)." );
+			assert.equal( names.includes("quay"), true, "The string 'quay' should be included in name. (case insensitive)." );
+			assert.equal( names.includes("seaview"), true, "The string 'seaview' should be included in name. (case insensitive)." );
+         });
+		 QUnit.test( "Check room availability across all hotels.", function( assert ) {
+            var fantasticHotel = Hotel("The Fantastic Hotel", 100, 50);
+			var marvellousHotel = Hotel("The Marvellous Hotel", 200, 100);
+			var amazingHotel = Hotel("The Amazing Hotel", 300, 150);
+			var phenomenalHotel = Hotel("The Phenomenal Hotel", 400, 350);
+			var chain = [fantasticHotel,marvellousHotel, amazingHotel, phenomenalHotel];
+			var countAvailableRooms = totalAvailability(chain);
+			if (countAvailableRooms==350 || countAvailableRooms==104)
+			{var passTest = true;}
+            assert.equal( passTest, true, "Rooms available should total 350 or 104." );
+         });
+		 QUnit.test( "Add swimming pools.", function( assert ) {
+            var fantasticHotel = Hotel("The Fantastic Hotel", 100, 50);
+			var marvellousHotel = Hotel("The Marvellous Hotel", 200, 100);
+			var amazingHotel = Hotel("The Amazing Hotel", 300, 150);
+			var phenomenalHotel = Hotel("The Phenomenal Hotel", 400, 350);
+			var chain = [fantasticHotel,marvellousHotel, amazingHotel, phenomenalHotel];
+			var arrayHotelsWithSwimmingPools = addSwimmingPools(chain);
+            assert.equal( arrayHotelsWithSwimmingPools.length, 2, "Two hotels should have swimming pools." );
+         });
+		 QUnit.test( "Rating the Hotels", function( assert ) {
+			var fantasticHotel = {};
+			fantasticHotel.name = "The Fantastic Hotel"; 
+			fantasticHotel.totalRooms = 100;
+			fantasticHotel.bookedRooms = 50;
+			fantasticHotel.hasSwimmingPool = false;
+			fantasticHotel.hasGym = true;
+			fantasticHotel.roomsAvailable = function(){
+			return totalRooms - bookedRooms;
+			}; 
+			var marvellousHotel = {};
+			marvellousHotel.name = "The Marvellous Hotel"; 
+			marvellousHotel.totalRooms = 200;
+			marvellousHotel.bookedRooms = 100;
+			marvellousHotel.hasSwimmingPool = false;
+			marvellousHotel.hasGym = false;
+			marvellousHotel.roomsAvailable = function(){
+			return totalRooms - bookedRooms;
+			}; 
+			var amazingHotel = {};
+			amazingHotel.name = "The Amazing Hotel"; 
+			amazingHotel.totalRooms = 300;
+			amazingHotel.bookedRooms = 150;
+			amazingHotel.hasSwimmingPool = true;
+			amazingHotel.hasGym = false;
+			amazingHotel.roomsAvailable = function(){
+			return totalRooms - bookedRooms;
+			}; 
+			var phenomenalHotel = {};
+			phenomenalHotel.name = "The Phenomenal Hotel"; 
+			phenomenalHotel.totalRooms = 400;
+			phenomenalHotel.bookedRooms = 350;
+			phenomenalHotel.hasSwimmingPool = true;
+			phenomenalHotel.hasGym = true;
+			phenomenalHotel.roomsAvailable = function(){
+			return totalRooms - bookedRooms;
+			}; 
+			var chain = [fantasticHotel, marvellousHotel, amazingHotel, phenomenalHotel];
+			var arrayHotelsWithPoolsAndGyms = ratings(chain);
+			var namesOfSilverHotels = (arrayHotelsWithPoolsAndGyms[0].name + arrayHotelsWithPoolsAndGyms[1].name).toLowerCase();
+            assert.equal( arrayHotelsWithPoolsAndGyms.length, 2, "Two hotels have a Silver rating." );
+			assert.equal( namesOfSilverHotels.includes("amazing"), true, "The string 'amazing' should be included in name. (case insensitive)." );
+			assert.equal( namesOfSilverHotels.includes("fantastic"), true, "The string 'fantastic' should be included in name. (case insensitive)." );
+		 }); 	
+ </script>
+
+
+  
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  
+  
+</body>
+</html>

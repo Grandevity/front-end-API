@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar">
+        <div class="navbar-list">
+            <li id="navbar-list-1" onmouseleave="removeshowclass('picture-one')" onmouseenter="addshowclass('picture-one')">< about me ></li>
+            <li id="navbar-list-2" onmouseleave="removeshowclass('picture-two')" onmouseenter="addshowclass('picture-two')">< academics ></academics></li>
+            <li id="navbar-list-3" onmouseleave="removeshowclass('picture-three')" onmouseenter="addshowclass('picture-three')">< portfolio ></li>
+            <li id="navbar-list-4" onmouseleave="removeshowclass('picture-four')" onmouseenter="addshowclass('picture-four')">< contact me ></li>
+        </div>
+        <div class="navbar-picture-list"></div>
+            <div class="navbar-picture" id="picture-one"></div>
+            <div class="navbar-picture" id="picture-two"></div>
+            <div class="navbar-picture" id="picture-three"></div>
+            <div class="navbar-picture" id="picture-four"></div>
+    </div>
+    <script>
+        function addshowclass(targetelement){
+            document.getElementById(targetelement).classList.add('showimage');
+        }
+        function removeshowclass(targetelement){
+            document.getElementById(targetelement).classList.remove('showimage');
+        }
+    </script>
+</body>
+</html>

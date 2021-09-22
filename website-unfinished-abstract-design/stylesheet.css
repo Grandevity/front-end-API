@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;  
+}
+
+body{
+    background-color: black;
+}
+
+.navbar-list{
+    color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3vw;
+    font-family: 'Fira Code', monospace;
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+.navbar-list > li {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 1vw;
+    margin-bottom: 0.5vw;  
+    padding-right: 8vw;  
+    padding-left: 1vw;
+    background: linear-gradient(to left, black 34%, rgb(177, 177, 177) 65%) right;
+    background-size: 300%;
+    transition: 0.5s ease-out;
+}
+
+.navbar-list > li:hover{
+    background-position: left;
+    color: black;
+    cursor:pointer;
+}
+.navbar-picture {
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 20%;
+    left: 60%;
+    width: 30vw;
+    height: 30vw;
+    opacity: 0;
+    transition: 1s;
+    border-radius: 5%;
+    filter: contrast(2);
+    
+}
+
+#picture-one{
+    background-image: url(images/imageOne.jpg);
+}
+#picture-two{
+    background-image: url(images/imageTwo.jpg);
+    background-position: top;
+}
+#picture-three{
+    background-image: url(images/imageThree.jpg);
+    background-position: top;
+}
+#picture-four{
+    background-image: url(images/imageFour.jpg);
+    background-position: right;
+}
+.showimage{
+    opacity: 1;
+}
+
